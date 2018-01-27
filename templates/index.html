@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mars_update</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" type="css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row jumbotron text-center bg">
+            <h1>Mars is there,</h1>
+            <h2>waiting to be reached!</h2>
+            <p>
+                <a class="btn btn-primary btn-lg" href="/scrape" role="button">Mars Latest!</a>
+            </p>
+        </div>
+
+        <!-- Mars Info -->
+        <div class="row" id="Mars_news">
+            <div class="col-md-12">
+                <h2 class="heading">Mars Lates News</h2>
+                <h3 class="heading">{{listings.list_date}}</h3>
+                <h4 class="heading">{{listings.content_title}}</h4>
+                <p>{{listings.article_teaser_body}}</p>
+            </div>
+            <div class="row" id="Info">
+                <div class="col-md-8">
+                    <h3 class="heading">Featured Image</h3>
+                    <h4 class="heading">{{listings.featuredDate}}</h4>
+                    <img src={{listings.featuredImage}} alt="Featherd Image">
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <h3 class="heading">Mars Weather Update</h3>
+                        <p>{{listings.weather}}</p>
+                    </div>
+                    <div class="row">
+                        <h3 class="heading">Facts</h3>
+                        <div>
+                            <ul style="list-style: none;">
+
+                                {% for i, j in listings.facts.items() %}
+                                <li>{{i}} ---> {{j}}</li>
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+<hr>
+        <div class="row" id="4Images">
+          <div class="row" >
+            <h2>Mars Hemispheres</h2>
+          </div>
+          <div class="row" >
+            <hr>
+          </div>
+          <div class="row" >
+            <div class="col-md-6" >
+              <img class="img-responsive" src={{listings.images[0].cerberus}} alt="cerberus">
+              <h3>cerberus</h3>
+            </div>
+            <div class="col-md-6" >
+              <img class="img-responsive" src={{listings.images[1].schiaparelli}} alt="schiaparelli">
+              <h3>schiaparelli</h3>
+            </div>
+          </div>
+
+          <div class="row" >
+            <hr>
+          </div>
+
+          <div class="row" >
+            <div class="col-md-6" >
+              <img class="img-responsive" src={{listings.images[2].syrtis}} alt="syrtis">
+              <h3>syrtis</h3>
+            </div>
+            <div class="col-md-6" >
+              <img class="img-responsive" src={{listings.images[3].valles}} alt="valles">
+              <h3>valles</h3>
+            </div>
+          </div>
+        </div>
+</body>
+
+</html>
