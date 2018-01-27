@@ -13,7 +13,7 @@
 <body>
     <div class="container">
 
-        <div class="row jumbotron text-center bg">
+        <div class="row jumbotron text-center">
             <h1>Mars is there,</h1>
             <h2>waiting to be reached!</h2>
             <p>
@@ -22,30 +22,32 @@
         </div>
 
         <!-- Mars Info -->
-        <div class="row" id="Mars_news">
+        <div class="row text-center" id="Mars_news">
             <div class="col-md-12">
                 <h2 class="heading">Mars Lates News</h2>
-                <h3 class="heading">{{listings.list_date}}</h3>
-                <h4 class="heading">{{listings.content_title}}</h4>
-                <p>{{listings.article_teaser_body}}</p>
+                <h3 class="heading">{{marsScrape.list_date}}</h3>
+                <h4 class="heading">{{marsScrape.content_title}}</h4>
+                <p>{{marsScrape.article_teaser_body}}</p>
             </div>
             <div class="row" id="Info">
                 <div class="col-md-8">
                     <h3 class="heading">Featured Image</h3>
-                    <h4 class="heading">{{listings.featuredDate}}</h4>
-                    <img src={{listings.featuredImage}} alt="Featherd Image">
+                    <h4 class="heading">{{marsScrape.featuredDate}}</h4>
+                    <div class="img-responsive img-thumbnail">
+                    <img src={{marsScrape.featuredImage}} alt="Featherd Image">
+                  </div>
                 </div>
                 <div class="col-md-4">
                     <div class="row">
                         <h3 class="heading">Mars Weather Update</h3>
-                        <p>{{listings.weather}}</p>
+                        <p>{{marsScrape.weather}}</p>
                     </div>
                     <div class="row">
                         <h3 class="heading">Facts</h3>
                         <div>
                             <ul style="list-style: none;">
 
-                                {% for i, j in listings.facts.items() %}
+                                {% for i, j in marsScrape.facts.items() %}
                                 <li>{{i}} ---> {{j}}</li>
                                 {% endfor %}
 
@@ -67,11 +69,11 @@
           </div>
           <div class="row" >
             <div class="col-md-6" >
-              <img class="img-responsive" src={{listings.images[0].cerberus}} alt="cerberus">
+              <img class="img-responsive img-thumbnail" src={{marsScrape.images[0].cerberus}} alt="cerberus">
               <h3>cerberus</h3>
             </div>
             <div class="col-md-6" >
-              <img class="img-responsive" src={{listings.images[1].schiaparelli}} alt="schiaparelli">
+              <img class="img-responsive img-thumbnail" src={{marsScrape.images[1].schiaparelli}} alt="schiaparelli">
               <h3>schiaparelli</h3>
             </div>
           </div>
@@ -82,11 +84,11 @@
 
           <div class="row" >
             <div class="col-md-6" >
-              <img class="img-responsive" src={{listings.images[2].syrtis}} alt="syrtis">
+              <img class="img-responsive img-thumbnail" src={{marsScrape.images[2].syrtis}} alt="syrtis">
               <h3>syrtis</h3>
             </div>
             <div class="col-md-6" >
-              <img class="img-responsive" src={{listings.images[3].valles}} alt="valles">
+              <img class="img-responsive img-thumbnail" src={{marsScrape.images[3].valles}} alt="valles">
               <h3>valles</h3>
             </div>
           </div>

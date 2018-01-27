@@ -161,8 +161,4 @@ def scrape():
 
     updates['images']=images
 
-    print(updates)
-
-    #return listings
-    #return news_update
     return updates
